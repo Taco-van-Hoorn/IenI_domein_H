@@ -39,7 +39,8 @@ Als je zelf een website bouwt maak dan in dezelfde map 'public' een nieuwe map a
                         echo "<ul>";
                         foreach ($files as $file) {
                             if (!in_array($file, $ignored_files)) {
-                                echo '<li><a title="' . $file . '" href="/lesmateriaal/' . $file . '/" target="_blank"><strong>' . $file . '</strong></a></li>';
+                                $suffix = is_dir("../lesmateriaal/public/" . $file) ? '/' : '';
+                                echo '<li><a title="' . $file . '" href="/lesmateriaal/' . $file . $suffix . '" target="_blank"><strong>' . $file . '</strong></a></li>';
                             }
                         }
                         ?>
